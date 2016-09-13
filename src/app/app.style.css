@@ -1,0 +1,9 @@
+@import 'https://fonts.googleapis.com/css?family=Anton|Libre+Baskerville|Oswald:700|Slabo+27px';
+
+html, body{
+  height: 100%;
+  font-family: 'Oswald', sans-serif;
+}
+*{
+  box-sizing: border-box;
+}
