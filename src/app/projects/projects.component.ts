@@ -11,13 +11,18 @@ import {ProjectDataService} from '../common/projectData.service';
 })
 export class Projects {
   localState = { value: '' };
-
+  localProjects = [];
   windowHeight:number;
   backgroundColor:string;
   backgroundColors:Array<any>;
 
   constructor(public appState: AppState, public projectDataService:ProjectDataService) {
-
+    this.projectDataService.getData().subscribe(
+      data=>{
+        this.localProjects = data;
+        console.log(this.localProjects);
+      }
+    )
   }
 
   @HostListener('window:resize', ['$event'])
