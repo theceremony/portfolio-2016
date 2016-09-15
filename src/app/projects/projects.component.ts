@@ -20,7 +20,6 @@ export class Projects {
     this.projectDataService.getData().subscribe(
       data=>{
         this.localProjects = data;
-        console.log(this.localProjects);
       }
     )
   }
@@ -33,7 +32,9 @@ export class Projects {
   ngOnInit() {
     this.windowHeight = window.innerHeight;
   }
-
+  showProject(project:Object){
+    console.log(project);
+  }
   submitState(value) {
     console.log('submitState', value);
     this.appState.set('value', value);

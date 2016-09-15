@@ -7,3 +7,64 @@ html, body{
 *{
   box-sizing: border-box;
 }
+
+
+.site-content-container{
+  position: fixed;
+  top:0;
+  left: 0;
+  height: 100%;
+  width:100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  z-index: 0;
+  text-align:center;
+}
+
+header{
+  display: block;
+  position: relative;
+  position: fixed;
+  background-color: rgba(255,255,255,0.9);
+  width:100%;
+  top:0;
+  left:0;
+  text-align: center;
+  z-index: 300;
+  height: 10vw;
+  max-height: 50px;
+  z-index: 1000%;
+}
+
+
+a.back-button{
+  width: 4.1vw;
+  height: 4.1vw;
+  max-height: 21px;
+  max-width: 21px;
+  display: inline-block;
+  position: absolute;
+  left: 3vw;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+a.back-button img{
+  width: 100%;
+  display: block;
+}
+
+
+h1{
+  text-transform: uppercase;
+}
+
+h3{
+  font-family: 'Libre Baskerville', serif;
+}
+
+p{
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.5vw;
+  line-height: 190%;
+}

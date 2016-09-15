@@ -22,15 +22,16 @@ background.open{
 
 burger {
   display: block;
-  position:fixed;
-  top: 3vw;
-  left:3vw;
-  width: 4vw;
-  height: 4vw;
-  min-width: 40px;
-  min-height: 40px;
+  position:absolute;
+  top: 50%;
+  right:3vw;
+  width: 4.1vw;
+  height: 4.1vw;
+  max-height: 21px;
+  max-width: 21px;
   z-index: 101;
   cursor: pointer;
+  transform: translateY(-50%);
 }
 
 burger:hover span{
@@ -42,7 +43,7 @@ burger span {
   position: absolute;
   width: 100%;
   height: 16%;
-  background-color: #fff;
+  background-color: #222;
   top: 0;
   -webkit-transition: top 0.2s, transform 0.2s, -webkit-transform 0.2s, opacity 0.2s;
   transition: top 0.2s, transform 0.2s, opacity 0.2s;
