@@ -14,6 +14,8 @@ import '@angular/forms';
 import '@angular/http';
 import '@angular/router';
 
+import '@vimeo/player';
+
 // AngularClass
 import '@angularclass/hmr';
 

@@ -1,7 +1,7 @@
 
 
 .project-display-container {
-  display: display;
+  display: none;
   position: fixed;
   top:0;
   left: 0;
@@ -25,24 +25,75 @@ h1{
 }
 
 
-.video iframe.project-video-display {
-  width: 100vw;
-  height: 56vw;
-}
+
+
 
 .imagery{
   width:100%;
   overflow:hidden;
-  background-position: center;
-  background-size: cover;
-  background-color: #f00;
-  color: #fff;
+
+  background-color: #fff;
+  color: #333;
 
 }
 
 .imagery img {
   width:100vw;
   display: block;
+}
+
+.imagery .imagery-background-image{
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.1;
+}
+
+.imagery .title-copy{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  padding: 10vw;
+}
+
+.play-button{
+  display:block;
+  color: #333;
+  text-decoration: none;
+  text-align: center;
+  font-size: 3vw;
+  margin-top:3vw;
+}
+
+.play-button:hover{
+  color: #000;
+}
+
+.play-button img{
+  display: block;
+  width: 5vw;
+  height: 5vw;
+  text-align: center;
+  margin-left:auto;
+  margin-right:auto;
+  transform: translateX(0.5vw);
+}
+
+.imagery .title-copy h1 {
+  font-size: 6vw;
+  margin:0;
+}
+
+.imagery .title-copy h3 {
+  font-size: 2vw;
+  margin:0;
 }
 
 .copy{

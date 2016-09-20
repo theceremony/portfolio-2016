@@ -1,27 +1,20 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, Input } from '@angular/core';
 import { AppState } from '../app.service';
-import {ProjectDataService} from '../common/projectData.service';
+
 
 
 @Component({
   selector: 'projects',
   styleUrls: [ './projects.style.css' ],
-  templateUrl: './projects.template.html',
-  providers: [ProjectDataService]
+  templateUrl: './projects.template.html'
 })
 export class Projects {
-  localState = { value: '' };
-  localProjects = [];
+  // ------------------------------------------
+  @Input('projects') localProjects:Array<any>;
   windowHeight:number;
-  backgroundColor:string;
-  backgroundColors:Array<any>;
+  // ------------------------------------------
+  constructor(public appState: AppState) {
 
-  constructor(public appState: AppState, public projectDataService:ProjectDataService) {
-    this.projectDataService.getData().subscribe(
-      data=>{
-        this.localProjects = data;
-      }
-    )
   }
 
   @HostListener('window:resize', ['$event'])
@@ -32,13 +25,9 @@ export class Projects {
   ngOnInit() {
     this.windowHeight = window.innerHeight;
   }
+
   showProject(project:Object){
     console.log(project);
-  }
-  submitState(value) {
-    console.log('submitState', value);
-    this.appState.set('value', value);
-    this.localState.value = '';
   }
 
 }
