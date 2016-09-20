@@ -1,5 +1,4 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { AppState } from './app.service';
 import { ProjectDataService } from "./common/projectData.service";
 
 
@@ -11,11 +10,9 @@ import { ProjectDataService } from "./common/projectData.service";
   providers: [ProjectDataService]
 })
 export class App {
-  angularclassLogo = 'assets/img/angularclass-avatar.png';
-  name = '';
   localProjects = [];
 
-  constructor(public appState: AppState, public projectDataService:ProjectDataService) {
+  constructor( public projectDataService:ProjectDataService) {
     this.projectDataService.getData().subscribe(
       data=>{
         this.localProjects = data;

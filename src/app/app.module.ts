@@ -3,6 +3,7 @@ import { NgModule, ApplicationRef } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
 import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
 import { ENV_PROVIDERS } from './environment';
 
@@ -17,6 +18,7 @@ import { Home } from './home';
 import { Projects, ProjectDisplay } from './projects';
 import { About } from './about';
 import { NoContent } from './no-content';
+import { ROUTES } from './app.routes';
 // -----------------------------------------------------------------------------
 
 // Application wide providers
@@ -25,7 +27,7 @@ const APP_PROVIDERS = [ ...APP_RESOLVER_PROVIDERS, AppState ];
 @NgModule({
   bootstrap   : [ App ],
   declarations: [ App, About, Home, NoContent, Hamburger,Projects,ProjectDisplay],
-  imports     : [ BrowserModule, FormsModule, HttpModule ],
+  imports     : [ BrowserModule, FormsModule, HttpModule, RouterModule.forRoot(ROUTES, { useHash: false }) ],
   providers   : [ ENV_PROVIDERS, APP_PROVIDERS, ProjectDataService ]
 })
 
