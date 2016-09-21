@@ -8,6 +8,13 @@ html, body{
   box-sizing: border-box;
 }
 
+.hideLoader{
+  opacity:0;
+  -webkit-transition: opacity 1.5;
+  transition: opacity 1.5s;
+  pointer-events: none;
+}
+
 
 .site-content-container{
   position: fixed;
@@ -76,14 +83,14 @@ p{
 
 @media only screen and (max-width: 768px) {
   p{
-    font-size: 2.8vw;
+    font-size: 3.1vw;
     line-height: 170%;
   }
   h3{
     font-size: 3.8vw;
   }
   h1{
-    font-size:4.5vw;
+    font-size:8.5vw;
   }
 }
 

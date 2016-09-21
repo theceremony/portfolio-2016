@@ -65,10 +65,11 @@ nav a{
   position: relative;
   box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
   /*border: 0.1vw solid #aaa;*/
+  overflow: hidden;
 }
 
-.project-info-hover{
-  display:none;
+.project-info .project-info-hover{
+  display:block;
   position: absolute;
   top:0;
   left:0;
@@ -77,18 +78,35 @@ nav a{
   text-align:center;
   color: rgb(0,0,0);
   background-color: rgba(200,0,0,.9);
+  opacity:0;
+  transform: translateY(-50%);
+  -webkit-transition: opacity 0.2s,transform 0.2s, -webkit-transform 0.2s;
+  transition: opacity 0.2s, transform 0.2s;
 }
 
 .project-info:hover .project-info-hover{
-  display:block;
+  opacity:0.9;
+  transform: translateY(0);
+  -webkit-transition: opacity 0.2s,transform 0.4s, -webkit-transform 0.4s;
+  transition: opacity 0.2s, transform 0.4s;
 }
 
-.project-info-hover-text{
+.project-info .project-info-hover .project-info-hover-text{
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%,150%) scale(.5);
   color: #fff;
+  
+   -webkit-transition: top 0.2s, transform 0.4s, -webkit-transform 0.2s, opacity 0.2s;
+  transition: top 0.2s, transform 0.2s, opacity 0.2s;
+}
+
+.project-info:hover .project-info-hover .project-info-hover-text{
+  opacity: 1;
+  transform: translate(-50%,-50%) scale(1);
+   -webkit-transition: top 0.2s, transform 0.2s, -webkit-transform 0.2s, opacity 0.2s;
+  transition: top 0.2s, transform 0.2s, opacity 0.2s;
 }
 
 .project img {

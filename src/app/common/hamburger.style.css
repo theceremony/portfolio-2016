@@ -35,7 +35,7 @@ burger {
 }
 
 burger:hover span{
-  background-color: #eee;
+  background-color: #000;
 }
 
 burger span {

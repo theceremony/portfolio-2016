@@ -1,9 +1,17 @@
-import { Component, HostListener } from '@angular/core';
+import { 
+  Component, 
+  HostListener,
+  trigger,
+  state,
+  style,
+  transition,
+  animate 
+} from '@angular/core';
 import { AppState } from '../app.service';
 import { ProjectDataService } from "../common/projectData.service";
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Project } from '../projects/project';
-import * as Player from '@vimeo/player'
+
 
 // declare var Vimeo: any;
 
@@ -11,19 +19,34 @@ import * as Player from '@vimeo/player'
   selector: 'project-display',
   styleUrls: [ './projectDisplay.style.css' ],
   templateUrl: './projectDisplay.template.html',
-  providers: [ProjectDataService]
+  providers: [ProjectDataService],
+  animations:[
+    trigger('flyInOut', [
+      state('in', style({transform: 'scale(1)'})),
+      
+      transition('void => *', [
+        style({transform: 'scale(0)'}),
+        animate(200)
+      ]),
+      
+      transition('* => void', [
+        style({transform: 'scale(0)'}),
+        animate(200)
+      ])
+    ])
+  ]
 })
 
 export class ProjectDisplay{
   private windowHeight : Number;
-  private videoOptions : Object;
-  private videPlayer : any;
-
+  
   currentProject:Project;
 
-  constructor(public projectDataService:ProjectDataService,private route: ActivatedRoute, private router: Router){
-
-  }
+  constructor(
+    public projectDataService:ProjectDataService,
+    private route: ActivatedRoute, 
+    private router: Router
+    ){ }
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
@@ -31,37 +54,22 @@ export class ProjectDisplay{
   }
 
   ngOnInit() {
-    
-
     this.route.params.forEach((params: Params) => {
-      
       let id = params['projectId'];
       this.projectDataService
           .getProject(id)
           .then(project =>this.currentProject = project);
     });
-
-
-
     this.windowHeight = window.innerHeight;
   }
 
-  setupVideoPlayer(){
-   
-  }
-
   playVideo(videoId:number):void{
-    // this.videPlayer.play();
-    // this.videPlayer.element.parentNode.parentNode.classList += ' show';
-    // console.log('this.videPlayer.element.classList',this.videPlayer.element.className);
-    // event.preventDefault();
     this.router.navigate([
         '/projects',
         this.currentProject.projectId,
         'play-video',
         this.currentProject.vimeoId
       ]);
-    console.log('hello',this.router);
   }
 
 }

@@ -1,5 +1,5 @@
 <router-outlet></router-outlet>
-<div class="project-display-container" *ngIf="currentProject">
+<div class="project-display-container" [@flyInOut] *ngIf="currentProject">
   <div class="imagery"  [style.minHeight]="windowHeight + 'px'" >
     <div class="imagery-background-image" [style.background-image]="'url(/assets/img/work/' + currentProject.mediaFolder + '/main.jpg)'"> </div>
     <div class="title-copy">

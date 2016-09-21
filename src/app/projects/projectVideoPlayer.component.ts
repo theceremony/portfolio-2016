@@ -1,4 +1,12 @@
-import { Component, HostListener } from '@angular/core';
+import { 
+  Component, 
+  HostListener,
+  trigger,
+  state,
+  style,
+  transition,
+  animate 
+} from '@angular/core';
 import { Project } from '../projects/project';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import * as Player from '@vimeo/player'
@@ -6,7 +14,22 @@ import * as Player from '@vimeo/player'
 @Component({
   selector: 'project-display',
   styleUrls: [ './projectVideoPlayer.style.css' ],
-  templateUrl: './projectVideoPlayer.template.html'
+  templateUrl: './projectVideoPlayer.template.html',
+  animations:[
+    trigger('flyInOut', [
+      state('in', style({transform: 'scale(1)'})),
+      
+      transition('void => *', [
+        style({transform: 'scale(0)'}),
+        animate(200)
+      ]),
+      
+      transition('* => void', [
+        style({transform: 'scale(0)'}),
+        animate(200)
+      ])
+    ])
+  ]
 })
 
 export class ProjectVideoPlayer{

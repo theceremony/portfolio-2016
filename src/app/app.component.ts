@@ -21,8 +21,10 @@ export class App {
     '#ff3300',
     '#68E381',
     '#ff3300',
+    '#533',
     '#11C6F7',
-    '#833'
+    '#533',
+    '#300'
   ];
   
 
@@ -40,7 +42,9 @@ export class App {
     this.backgroundColor = this.backgroundColors[Math.round(Math.random() * (this.backgroundColors.length-1))];
     this.projectDataService
         .getProjects()
-        .then( projects => this.localProjects = projects );
+        .then( projects =>{
+          this.localProjects = projects
+         });
   }
 
   back(){
