@@ -88,6 +88,7 @@ nav a{
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
+  color: #fff;
 }
 
 .project img {
@@ -103,6 +104,7 @@ nav a{
   padding:0;
   font-size: 3vw;
   text-transform: uppercase;
+  font-family: 'Oswald', sans-serif;
 }
 
 .project h4{

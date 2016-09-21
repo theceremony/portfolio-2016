@@ -5,5 +5,6 @@ import { Projects, ProjectDisplay } from './projects';
 
 export const ROUTES: Routes = [
   { path: 'projects/:projectId', component: ProjectDisplay },
+  { path: 'projects/:projectId/play-video', component: ProjectDisplay },
   { path: '**', component: ProjectDisplay }
 ];

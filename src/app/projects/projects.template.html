@@ -9,7 +9,7 @@
       <div class="project-info">
         <a (click)="showProject(project)">
           <img src="/assets/img/work/{{project.mediaFolder}}/thumb.jpg" />
-          <div class="project-info-hover">
+          <div class="project-info-hover" [style.backgroundColor]="backgroundColor">
             <div class="project-info-hover-text">
               <h3>{{project.clientName}}</h3>
               <h4>{{project.projectName}}</h4>

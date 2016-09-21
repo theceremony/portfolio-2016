@@ -1,6 +1,7 @@
 import { Component, HostListener } from '@angular/core';
 import { AppState } from '../app.service';
 import { ProjectDataService } from "../common/projectData.service";
+import { ActivatedRoute, Params } from '@angular/router';
 import { Subscription } from 'rxjs';
 import * as Player from '@vimeo/player'
 
@@ -19,7 +20,9 @@ export class ProjectDisplay{
   private windowHeight : Number;
   private videoOptions : Object;
   private videPlayer : any;
-  constructor(public projectDataService:ProjectDataService){
+  currentProject:any;
+
+  constructor(public projectDataService:ProjectDataService,private route: ActivatedRoute){
 
   }
 
@@ -29,6 +32,14 @@ export class ProjectDisplay{
   }
 
   ngOnInit() {
+    
+    this.route.params.forEach((params: Params) => {
+      
+      let id = params['projectId'];
+      console.log('id',id);
+      
+    });
+
     this.videoOptions = {
       id: 69990780,
       width: 100,

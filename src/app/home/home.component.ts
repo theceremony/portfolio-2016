@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, Input } from '@angular/core';
 import { AppState } from '../app.service';
 
 
@@ -8,21 +8,15 @@ import { AppState } from '../app.service';
   templateUrl: './home.template.html'
 })
 export class Home {
+  @Input() backgroundColor:string;
+
   localState = { value: '' };
-
   windowHeight:number;
-  backgroundColor:string;
-  backgroundColors:Array<any>;
-
-  constructor(public appState: AppState) {
-    this.backgroundColors = [
-      '#ff3300',
-      '#11C6F7',
-      '#68E381'
-    ];
-  }
+  
+  constructor(public appState: AppState) { }
 
   @HostListener('window:resize', ['$event'])
+  
   onResize(event) {
     this.windowHeight = event.target.innerHeight;
   }

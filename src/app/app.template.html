@@ -6,8 +6,8 @@
 <router-outlet></router-outlet>
 
 <div class="site-content-container">
-  <home></home>
-  <projects [projects]="localProjects"></projects>
+  <home [backgroundColor]="backgroundColor" ></home>
+  <projects [projects]="localProjects" [backgroundColor]="backgroundColor"></projects>
   <about></about>
   <!-- <footer>Jeramy Morrill 2016</footer> -->
 </div>

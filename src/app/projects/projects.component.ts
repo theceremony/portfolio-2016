@@ -1,5 +1,6 @@
 import { Component, HostListener, Input } from '@angular/core';
 import { AppState } from '../app.service';
+import { Router } from '@angular/router';
 
 
 
@@ -11,9 +12,11 @@ import { AppState } from '../app.service';
 export class Projects {
   // ------------------------------------------
   @Input('projects') localProjects:Array<any>;
+  @Input() backgroundColor:string;
   windowHeight:number;
+  currentProject:any;
   // ------------------------------------------
-  constructor(public appState: AppState) {
+  constructor(public appState: AppState, private router: Router) {
 
   }
 
@@ -26,8 +29,9 @@ export class Projects {
     this.windowHeight = window.innerHeight;
   }
 
-  showProject(project:Object){
-    console.log(project);
+  showProject(project:any){
+    this.currentProject = project;
+    this.router.navigate(['/projects',project.projectId]);
   }
 
 }
