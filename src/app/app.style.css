@@ -47,6 +47,7 @@ a.back-button{
   left: 3vw;
   top: 50%;
   transform: translateY(-50%);
+  cursor: pointer;
 }
 
 a.back-button img{
@@ -57,16 +58,33 @@ a.back-button img{
 
 h1{
   text-transform: uppercase;
+  font-size: 6vw;
+  line-height: 110%;
+  margin-bottom: 2vw;
 }
 
 h3{
   font-family: 'Libre Baskerville', serif;
+  font-size: 2vw;
 }
 
 p{
   font-family: 'Slabo 27px', serif;
   font-size: 1.5vw;
   line-height: 190%;
+}
+
+@media only screen and (max-width: 768px) {
+  p{
+    font-size: 2.8vw;
+    line-height: 170%;
+  }
+  h3{
+    font-size: 3.8vw;
+  }
+  h1{
+    font-size:4.5vw;
+  }
 }
 
 .fullscren-player-container{
@@ -76,8 +94,8 @@ p{
   left:0;
   width: 100%;
   height: 100%;
-  z-index: 300;
-  display: none;
+  z-index: 210;
+  display: block;
 }
 
 .fullscren-player-container.show{

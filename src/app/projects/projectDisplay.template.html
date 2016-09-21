@@ -1,20 +1,15 @@
-<div class="project-display-container">
-
-  <div class="fullscren-player-container">
-    <div id="fullscreen-player"></div>
-  </div>
-
-  <div class="imagery"  [style.minHeight]="windowHeight + 'px'">
-    <div class="imagery-background-image" [style.background-image]="'url(/assets/img/work/coke/landing.jpg)'"> </div>
+<router-outlet></router-outlet>
+<div class="project-display-container" *ngIf="currentProject">
+  <div class="imagery"  [style.minHeight]="windowHeight + 'px'" >
+    <div class="imagery-background-image" [style.background-image]="'url(/assets/img/work/' + currentProject.mediaFolder + '/main.jpg)'"> </div>
     <div class="title-copy">
-      <h1>The Wearable Movie</h1>
-      <h3>Making the world a happier place, one tshirt at a time</h3>
-      <p>Coca-Cola wanted to thank people who make the world a happier place by bringing together 600 of their customers, fans and employees to star in their own movie. We started by printing each frame of the film on 600 separate t-shirts, which were sent to around the globe with a personalized thank you. The recipients were simply asked to put on a smile, take a photo, and claim their frame in a collective effort to complete the film.  We handled everything from creative collaboration, design, and prototyping to front-end and back-end development of the HTML5 website.</p>
-      <a class="play-button" (click)="playVideo();" href="#">
+      <h1>{{currentProject.projectName}}</h1>
+      <h3>{{currentProject.projectSubHead}}</h3>
+      <p>{{currentProject.content.header.copy}}</p>
+      <a class="play-button" (click)="!!playVideo(currentProject.vimeoId);" href="#">
         <img src="/assets/img/play.svg" />
         <div>Play Video</div>
       </a>
     </div>
   </div>
-
 </div>

@@ -1,8 +1,8 @@
 import { Component, HostListener } from '@angular/core';
 import { AppState } from '../app.service';
 import { ProjectDataService } from "../common/projectData.service";
-import { ActivatedRoute, Params } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Project } from '../projects/project';
 import * as Player from '@vimeo/player'
 
 // declare var Vimeo: any;
@@ -15,14 +15,13 @@ import * as Player from '@vimeo/player'
 })
 
 export class ProjectDisplay{
-  private sub: Subscription;
-  private projectedData : Object;
   private windowHeight : Number;
   private videoOptions : Object;
   private videPlayer : any;
-  currentProject:any;
 
-  constructor(public projectDataService:ProjectDataService,private route: ActivatedRoute){
+  currentProject:Project;
+
+  constructor(public projectDataService:ProjectDataService,private route: ActivatedRoute, private router: Router){
 
   }
 
@@ -33,35 +32,36 @@ export class ProjectDisplay{
 
   ngOnInit() {
     
+
     this.route.params.forEach((params: Params) => {
       
       let id = params['projectId'];
-      console.log('id',id);
-      
+      this.projectDataService
+          .getProject(id)
+          .then(project =>this.currentProject = project);
     });
 
-    this.videoOptions = {
-      id: 69990780,
-      width: 100,
-      loop: false,
-      title: false,
-      byline: false,
-      portrait: false,
-      badge: false,
-      fullscreen: true
-    }
-    this.videPlayer = new Player('fullscreen-player', this.videoOptions);
-    this.videPlayer.on('play', function() {
-        console.log('played the video!');
-    });
+
+
     this.windowHeight = window.innerHeight;
-    console.log(this.videPlayer);
   }
 
-  playVideo(){
-    this.videPlayer.play();
-    this.videPlayer.element.parentNode.parentNode.classList += ' show';
-    console.log('this.videPlayer.element.classList',this.videPlayer.element.className);
+  setupVideoPlayer(){
+   
+  }
+
+  playVideo(videoId:number):void{
+    // this.videPlayer.play();
+    // this.videPlayer.element.parentNode.parentNode.classList += ' show';
+    // console.log('this.videPlayer.element.classList',this.videPlayer.element.className);
+    // event.preventDefault();
+    this.router.navigate([
+        '/projects',
+        this.currentProject.projectId,
+        'play-video',
+        this.currentProject.vimeoId
+      ]);
+    console.log('hello',this.router);
   }
 
 }

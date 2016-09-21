@@ -8,7 +8,13 @@ export class ProjectDataService{
   private headers = new Headers({'Content-Type': 'application/json'});
   private projectsUrl = '/assets/projects.json';
   constructor(private http:Http) { }
-    
+  
+
+  getProject(id: string): Promise<Project> {
+    return this.getProjects()
+               .then(projects => projects.find(project => project.projectId === id));
+  }
+
   getProjects():Promise<Project[]>{
     return this.http.get(this.projectsUrl)
                .toPromise()

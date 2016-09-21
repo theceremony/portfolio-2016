@@ -6,6 +6,7 @@
 		"projectSubHead": "The world's first wearable movie",
 		"projectUrl": "",
 		"mediaFolder": "coke",
+		"vimeoId":"69990780",
 		"videoUrl": "https://player.vimeo.com/video/69990780?title=0&byline=0&portrait=0",
 		"fwaSotd": true,
 		"type": "website",
@@ -31,6 +32,7 @@
 		"fwaSotd": true,
 		"mediaFolder": "sony",
 		"type": "website",
+		"vimeoId":"117536390",
 		"videoUrl": "https://player.vimeo.com/video/117536390?title=0&byline=0&portrait=0",
 		"content": {
 			"header": {
@@ -50,6 +52,7 @@
 		"projectSubHead": "Enjoy a Keurig brew in 3 simple steps.",
 		"projectUrl": "",
 		"mediaFolder": "keurig_brewhaha",
+		"vimeoId":"118260518",
 		"videoUrl": "https://player.vimeo.com/video/118260518?title=0&byline=0&portrait=0",
 		"showOnLanding": false,
 		"fwaSotd": false,
@@ -70,6 +73,7 @@
 		"clientName": "McDonalds",
 		"projectName": "Christmas Cracker",
 		"projectId": "McDonalds-christmas-cracker",
+		"vimeoId":"124232650",
 		"videoUrl": "https://player.vimeo.com/video/124232650?title=0&byline=0&portrait=0",
 		"projectSubHead": "An interactive bilboard for the holidays.",
 		"projectUrl": "",
@@ -96,6 +100,7 @@
 		"projectSubHead": "Three great choices. One amazing way to decide.",
 		"projectUrl": "http://www.pickmyelantra.com/",
 		"mediaFolder": "ddm",
+		"vimeoId":"61387913",
 		"videoUrl": "https://player.vimeo.com/video/61387913?title=0&byline=0&portrait=0",
 		"type": "website",
 		"fwaSotd": true,
@@ -121,6 +126,7 @@
 		"projectSubHead": "An interactive hologram installation.",
 		"projectUrl": "",
 		"mediaFolder": "comet",
+		"vimeoId":"61389103",
 		"videoUrl": "https://player.vimeo.com/video/61389103?title=0&byline=0&portrait=0",
 		"type": "installation",
 		"content": {
@@ -138,6 +144,7 @@
 		"projectSubHead": "The only app you'll ever need to survive the zombie apocalypse.",
 		"projectUrl": "http://walkingdeadchopshop.com/",
 		"mediaFolder": "twd",
+		"vimeoId":"71542590",
 		"videoUrl": "https://player.vimeo.com/video/71542590?title=0&byline=0&portrait=0",
 		"type": "app",
 		"content": {
@@ -163,6 +170,7 @@
 		"projectUrl": "",
 		"mediaFolder": "lexus",
 		"type": "installation",
+		"vimeoId":"76660596",
 		"videoUrl": "https://player.vimeo.com/video/76660596?title=0&byline=0&portrait=0",
 		"content": {
 			"header": {
@@ -199,6 +207,7 @@
 		"projectSubHead": "Real time karaoke avatars.",
 		"projectUrl": "",
 		"mediaFolder": "intel",
+		"vimeoId":"108518668",
 		"videoUrl": "https://player.vimeo.com/video/108518668?title=0&byline=0&portrait=0",
 		"type": "installation",
 		"content": {

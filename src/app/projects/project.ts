@@ -6,7 +6,7 @@ export class Project {
 	projectSubHead:string;
 	projectUrl:string;
 	mediaFolder:string;
-	videoUrl:string;
+	vimeoId: number;
 	fwaSotd: boolean;
 	type:string;
 	content:Object;
